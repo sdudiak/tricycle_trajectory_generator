@@ -50,7 +50,7 @@ public:
     /**
      * @brief Converts a ROS2 state message to a CasADi DM vector.
      * @param state ROS2 state message.
-     * @return CasADi DM vector [x, y, theta, phi].
+     * @return CasADi DM vector [x, y, theta, phi, v].
      */
     casadi::DM stateMsgToDM(const State &state) const;
 
@@ -67,7 +67,7 @@ public:
      * @param goal Target state.
      * @return Trajectory from start to goal.
      */
-    Trajectory generateTrajectory(const State &start, State &goal);
+    Trajectory generateTrajectory(const State &start, const State &goal);
 
 protected:
     int N_ = 20;      ///< Horizon length (number of steps).
@@ -82,8 +82,8 @@ protected:
 
     /**
      * @brief Defines the tricycle model dynamics.
-     * @param state Current state [x, y, theta, phi].
-     * @param control Control input [v, omega_phi].
+     * @param state Current state [x, y, theta, phi, v].
+     * @param control Control input [omega_phi, a].
      * @return Time derivative of state.
      */
     casadi::SX dynamics(const casadi::SX &state, const casadi::SX &control) const;
@@ -134,32 +134,4 @@ public:
      * @return Optimized trajectory result.
      */
     Result solve(const casadi::DM &x0, const casadi::DM &x_goal);
-};
-
-/**
- * @brief NLP-based trajectory generator with variable time step durations.
- *
- * @note This version is experimental and currently not used in the system.
- */
-class NLPTrajectoryGeneratorVariableDt : public NLPTrajectoryGeneratorBase
-{
-public:
-    /**
-     * @brief Constructor.
-     * @param L Wheelbase length of the tricycle model.
-     */
-    explicit NLPTrajectoryGeneratorVariableDt(double L);
-
-    /**
-     * @brief Solve the NLP problem with variable durations.
-     * @param x0 Initial state.
-     * @param x_goal Target state.
-     * @return Optimized trajectory result.
-     */
-    Result solve(const casadi::DM &x0, const casadi::DM &x_goal);
-
-private:
-    int M_ = 5;            ///< Number of different dt options to optimize over (discretized).
-    double dt_min_ = 0.05; ///< Minimum allowed time step.
-    double dt_max_ = 0.5;  ///< Maximum allowed time step.
 };

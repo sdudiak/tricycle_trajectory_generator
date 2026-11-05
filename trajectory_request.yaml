@@ -7,9 +7,9 @@ trajectory_requester:
     start.omega_phi: 0.0
     start.v: 0.0
 
-    goal.x: -2.0
-    goal.y: -2.0
-    goal.theta: 3.0
+    goal.x: -5.0
+    goal.y: -5.0
+    goal.theta: 0.0
     goal.phi: 0.0
     goal.omega_phi: 0.0
     goal.v: 0.0

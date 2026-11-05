@@ -2,12 +2,12 @@
 
 struct Constraints
 {
-    float phi_min;
-    float phi_max;
-    float omega_min;
-    float omega_max;
-    float v_max;
-    float v_min;
-    float acc_min;
-    float acc_max;
+    double phi_min;
+    double phi_max;
+    double omega_min;
+    double omega_max;
+    double v_max;
+    double v_min;
+    double acc_min;
+    double acc_max;
 };

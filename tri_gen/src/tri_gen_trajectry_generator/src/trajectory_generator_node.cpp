@@ -1,8 +1,11 @@
 #include "tri_gen_trajectry_generator/trajectory_generator_node.hpp"
+#include <algorithm>
+#include <cmath>
+#include <stdexcept>
 
 TrajectoryGeneratorNode::TrajectoryGeneratorNode() : Node("trajectory_generator_node")
 {
-    callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::Reentrant);
+    callback_group_ = this->create_callback_group(rclcpp::CallbackGroupType::MutuallyExclusive);
 
     generate_trajectory_service_ = this->create_service<GenerateTrajectorySrv>(
         "generate_trajectory",
@@ -13,15 +16,14 @@ TrajectoryGeneratorNode::TrajectoryGeneratorNode() : Node("trajectory_generator_
             std::placeholders::_2),
         rmw_qos_profile_services_default,
         callback_group_);
-    
+
     trajectory_publisher_ = this->create_publisher<TrajectoryMsg>
     ("trajectory_preview",10);
     trajectory_marker_pub_ = this->create_publisher<visualization_msgs::msg::MarkerArray>("trajectory_markers", 1);
 
-    //TODO add proper parameter loading and handling 
-
-    trajectory_generator_p_ = std::make_shared<NLPTrajectoryGeneratorFixedDt>(NLPTrajectoryGeneratorFixedDt(1.3)); // Fixed L for now
-    RCLCPP_INFO(get_logger(), "Trajector Generator Node initialized");
+    wheelbase_ = declare_parameter<double>("wheelbase", 1.3);
+    trajectory_generator_p_ = std::make_shared<NLPTrajectoryGeneratorFixedDt>(wheelbase_);
+    RCLCPP_INFO(get_logger(), "Trajectory Generator Node initialized");
 }
 
 void TrajectoryGeneratorNode::generateTrajectoryCb(
@@ -30,21 +32,25 @@ void TrajectoryGeneratorNode::generateTrajectoryCb(
     {
         RCLCPP_INFO(get_logger(), "Trajectory requested");
         response->success = false;
-        if(trajectory_is_being_generated_)
-        {
-            RCLCPP_WARN(get_logger(), "Requested another trajectory while one is being processed. Skipping the request");
-            response->message = "A trajectory is already being generated";
-            return;
-        }
-
         if (!verifyConstraints(request))
         {
             response->message = "The passed constraints were incorrect";
             return;
         }
 
-        int number_of_optimizer_steps = estimateNumberOfOptimizationSteps(request->start, request->goal, request->dt, request->v_max);
-        
+        int number_of_optimizer_steps;
+        try {
+            number_of_optimizer_steps = estimateNumberOfOptimizationSteps(
+                request->start, request->goal, request->dt,
+                std::max(std::abs(request->v_min), std::abs(request->v_max)),
+                std::max(std::abs(request->a_min), std::abs(request->a_max)),
+                std::max(std::abs(request->omega_phi_min), std::abs(request->omega_phi_max)),
+                std::max(std::abs(request->phi_min), std::abs(request->phi_max)));
+        } catch (const std::exception &e) {
+            response->message = e.what();
+            return;
+        }
+
         Constraints constraints;
         constraints.phi_min = request->phi_min;
         constraints.phi_max = request->phi_max;
@@ -57,7 +63,7 @@ void TrajectoryGeneratorNode::generateTrajectoryCb(
 
         // Prepare the trajectory generator
         trajectory_generator_p_->setDt(request->dt);
-        trajectory_generator_p_->setHorizon(number_of_optimizer_steps + 10); // Additional number of steps to help with achieving the goal
+        trajectory_generator_p_->setHorizon(number_of_optimizer_steps);
         trajectory_generator_p_->setConstraints(constraints);
 
         // Generate the trajectory
@@ -81,24 +87,49 @@ void TrajectoryGeneratorNode::generateTrajectoryCb(
 
         RCLCPP_INFO(get_logger(), "Trajectory generated in %.2f ms.", duration_ms);
 
-        //TODO: Trajectory checking - was the goal achieved
-        //TODO: Constraints checking
-        //TODO: Calculate trajectory length
-        //TODO: Calculate the curvature
+        for (size_t i = 0; i < trajectory.states.size(); ++i) {
+            const auto &state = trajectory.states[i];
+            response->max_velocity = std::max(response->max_velocity, std::abs(state.v));
+            // Curvature of the drive-wheel path: (theta_dot + phi_dot) / v.
+            if (std::abs(state.v) > 1e-6) {
+                response->max_curvature = std::max(response->max_curvature,
+                    std::abs(std::sin(state.phi) / wheelbase_ + state.omega_phi / state.v));
+            }
+            if (i < trajectory.controls.size()) {
+                const double next_v = trajectory.states[i + 1].v;
+                const double sum = std::abs(state.v) + std::abs(next_v);
+                response->total_length += state.v * next_v < 0.0 ?
+                    request->dt * (state.v * state.v + next_v * next_v) / (2.0 * sum) :
+                    request->dt * sum / 2.0;
+            }
+        }
 
         response->trajectory = trajectory;
         response->success = true;
         response->generation_time_ms = duration_ms;
-        response->message = "Trajectory generated succesfully";
+        response->message = "Trajectory generated successfully";
         trajectory_publisher_->publish(trajectory);
         publishTrajectoryMarkers(trajectory, request->start, request->goal);
-        RCLCPP_INFO(get_logger(), "Trajectory generated succesfully");
+        RCLCPP_INFO(get_logger(), "Trajectory generated successfully");
     }
 
 
     bool TrajectoryGeneratorNode::verifyConstraints(const std::shared_ptr<GenerateTrajectorySrv::Request> request) const
     {
-        // Add phimin phimax parameters
+        for (double value : {request->dt, request->phi_min, request->phi_max,
+                request->omega_phi_min, request->omega_phi_max, request->v_min,
+                request->v_max, request->a_min, request->a_max}) {
+            if (!std::isfinite(value)) return false;
+        }
+        if (request->dt <= 0.0) return false;
+        for (const auto *state : {&request->start, &request->goal}) {
+            for (double value : {state->x, state->y, state->theta, state->phi, state->v,
+                                state->omega_phi}) {
+                if (!std::isfinite(value)) return false;
+            }
+            if (state->phi < request->phi_min || state->phi > request->phi_max ||
+                state->v < request->v_min || state->v > request->v_max) return false;
+        }
         if (request->phi_min >= request->phi_max)
         {
             RCLCPP_WARN(get_logger(), "Invalid constraints: phi_min >= phi_max");
@@ -126,17 +157,24 @@ void TrajectoryGeneratorNode::generateTrajectoryCb(
         return true;
     }
 
-    int TrajectoryGeneratorNode::estimateNumberOfOptimizationSteps(const StateMsg &start, const StateMsg &goal, double dt, int v_max) const
+    int TrajectoryGeneratorNode::estimateNumberOfOptimizationSteps(
+        const StateMsg &start, const StateMsg &goal, double dt, double speed,
+        double acceleration, double steering_rate, double max_steering) const
     {
-        double dx = goal.x - start.x;
-        double dy = goal.y - start.y;
-        double linear_distance = std::sqrt(dx * dx + dy * dy);
-
-        // Estimate the number of steps (round up to ensure full coverage)
-        int steps = static_cast<int>(std::ceil(linear_distance / (v_max * dt)));
-
-        // Ensure at least one step
-        return std::max(steps, 1);
+        const double distance = std::hypot(goal.x - start.x, goal.y - start.y);
+        const double heading = std::abs(std::atan2(std::sin(goal.theta - start.theta),
+                                                  std::cos(goal.theta - start.theta)));
+        const double yaw_rate = speed * std::sin(std::min(max_steering, M_PI / 2)) / wheelbase_;
+        if (heading > 1e-6 && yaw_rate <= 0.0)
+            throw std::invalid_argument("Heading change requires steering authority");
+        // Conservative heuristic, not a feasibility guarantee for nonholonomic motion.
+        const double duration = 2.0 * distance / speed + 2.0 * speed / acceleration +
+            (heading > 1e-6 ? 2.0 * heading / yaw_rate : 0.0) +
+            2.0 * max_steering / steering_rate;
+        const double steps = std::max(20.0, std::ceil(duration / dt));
+        if (!std::isfinite(steps) || steps > 1000)
+            throw std::invalid_argument("Requested horizon exceeds the 1000-step limit");
+        return static_cast<int>(steps);
     }
     void TrajectoryGeneratorNode::publishTrajectoryMarkers(const TrajectoryMsg &trajectory, const StateMsg &start_state, const StateMsg &goal_state)
     {

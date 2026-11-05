@@ -1,10 +1,16 @@
 #include "tri_gen_trajectry_generator/trajectory_generator.hpp"
+#include <algorithm>
+#include <cmath>
+#include <stdexcept>
 
 using namespace casadi;
 
 // --------------------- Base Class ---------------------
 
-NLPTrajectoryGeneratorBase::NLPTrajectoryGeneratorBase(double L) : L_(L) {}
+NLPTrajectoryGeneratorBase::NLPTrajectoryGeneratorBase(double L) : L_(L) {
+    if (!std::isfinite(L) || L <= 0.0)
+        throw std::invalid_argument("Wheelbase must be finite and positive");
+}
 
 SX NLPTrajectoryGeneratorBase::dynamics(const SX &state, const SX &control) const
 {
@@ -113,12 +119,65 @@ NLPTrajectoryGeneratorBase::Trajectory NLPTrajectoryGeneratorBase::resultToTraje
     return trajectory;
 }
 
-NLPTrajectoryGeneratorBase::Trajectory NLPTrajectoryGeneratorBase::generateTrajectory(const State& start, State& goal)
+NLPTrajectoryGeneratorBase::Trajectory NLPTrajectoryGeneratorBase::generateTrajectory(const State& start, const State& goal)
 {
+    if (N_ < 1 || N_ > 1000 || !std::isfinite(dt_) || dt_ <= 0.0 ||
+        N_ * dt_ > 2147483647.0)
+        throw std::invalid_argument("Invalid horizon or timestep");
+    for (const auto &bounds : {std::make_pair(phi_min_, phi_max_),
+            std::make_pair(v_min_, v_max_), std::make_pair(omega_min_, omega_max_),
+            std::make_pair(acc_min_, acc_max_)}) {
+        if (!std::isfinite(bounds.first) || !std::isfinite(bounds.second) ||
+            bounds.first >= bounds.second)
+            throw std::invalid_argument("Bounds must be finite and ordered");
+    }
+    for (const auto *state : {&start, &goal}) {
+        for (double value : {state->x, state->y, state->theta, state->phi, state->v, state->omega_phi})
+            if (!std::isfinite(value)) throw std::invalid_argument("Nonfinite endpoint");
+        if (state->phi < phi_min_ || state->phi > phi_max_ ||
+            state->v < v_min_ || state->v > v_max_)
+            throw std::invalid_argument("Endpoint outside state bounds");
+    }
     casadi::DM start_dm = stateMsgToDM(start);
     casadi::DM goal_dm = stateMsgToDM(goal);
-
-    Result raw_trajectory = solve(start_dm,goal_dm);
+    // Select an equivalent heading near the initial heading for initialization.
+    goal_dm(2) = start.theta + std::atan2(std::sin(goal.theta - start.theta),
+                                        std::cos(goal.theta - start.theta));
+    Result raw_trajectory = solve(start_dm, goal_dm);
+    if (raw_trajectory.states.size() != static_cast<size_t>(N_ + 1) ||
+        raw_trajectory.controls.size() != static_cast<size_t>(N_) ||
+        raw_trajectory.durations.size() != static_cast<size_t>(N_))
+        throw std::runtime_error("Invalid solution dimensions");
+    const double tolerance = 1e-5;
+    auto check = [tolerance](double value, double lower, double upper) {
+        if (!std::isfinite(value) || value < lower - tolerance || value > upper + tolerance)
+            throw std::runtime_error("Solution violates bounds or dynamics");
+    };
+    const auto dynamics_function = createDynamicsFunction();
+    SX sx = SX::sym("validation_x", 5), su = SX::sym("validation_u", 2);
+    Function step("validation_rk4", {sx, su}, {rk4(dynamics_function, sx, su, dt_)});
+    for (int k = 0; k <= N_; ++k) {
+        const auto &state = raw_trajectory.states[k];
+        for (int i = 0; i < 5; ++i) check(static_cast<double>(state(i)), -1e20, 1e20);
+        check(static_cast<double>(state(3)), phi_min_, phi_max_);
+        check(static_cast<double>(state(4)), v_min_, v_max_);
+        if (k == 0 || k == N_) {
+            const auto &endpoint = k == 0 ? start_dm : goal_dm;
+            for (int i = 0; i < 5; ++i) {
+                double error = static_cast<double>(state(i) - endpoint(i));
+                if (i == 2) error = std::atan2(std::sin(error), std::cos(error));
+                check(error, 0.0, 0.0);
+            }
+        }
+        if (k == N_) continue;
+        const auto &control = raw_trajectory.controls[k];
+        check(static_cast<double>(control(0)), omega_min_, omega_max_);
+        check(static_cast<double>(control(1)), acc_min_, acc_max_);
+        check(static_cast<double>(raw_trajectory.durations[k]), dt_, dt_);
+        const auto predicted = step(std::vector<DM>{state, control})[0];
+        for (int i = 0; i < 5; ++i)
+            check(static_cast<double>(raw_trajectory.states[k + 1](i) - predicted(i)), 0.0, 0.0);
+    }
 
     return resultToTrajectory(raw_trajectory);
 }
@@ -168,17 +227,23 @@ NLPTrajectoryGeneratorBase::Result NLPTrajectoryGeneratorFixedDt::solve(const DM
 
         SX err = Xk - X_goal;
         SX pos_err = SX::vertcat({err(0), err(1)});   // x, y
-        SX angle_err = err(2); // theta
+        SX angle_err = atan2(sin(err(2)), cos(err(2))); // theta
         SX vel_err = err(4);                          // v
         // Objective function. Currently we care only about the x and y positions and orientation
         obj += 1 * (10.0 * dot(pos_err, pos_err) +
-                              10.0 * angle_err * angle_err + 
+                              10.0 * angle_err * angle_err +
                               0.0 * vel_err * vel_err) +
                0.01 * dot(Uk, Uk);
     }
 
+    // Enforce the complete terminal state; heading is periodic.
+    for (int i = 0; i < 5; ++i) {
+        SX error = Xs.back()(i) - X_goal(i);
+        g.push_back(i == 2 ? atan2(sin(error), cos(error)) : error);
+    }
+
     // Stack variables: [X0, ..., XN, U0, ..., UN-1]
-    
+
     SX opt_vars = SX::vertcat({SX::reshape(SX::horzcat(Xs), 5 * (N_ + 1), 1),
                                SX::reshape(SX::horzcat(Us), 2 * N_, 1)});
 
@@ -222,9 +287,16 @@ NLPTrajectoryGeneratorBase::Result NLPTrajectoryGeneratorFixedDt::solve(const DM
     DM lbg = DM::zeros(ng);
     DM ubg = DM::zeros(ng);
 
+    // Initialize on a straight interpolation between the endpoint states.
+    std::vector<double> initial(total_vars, 0.0);
+    for (int k = 0; k <= N_; ++k)
+        for (int i = 0; i < 5; ++i)
+            initial[5 * k + i] = static_cast<double>(x0_dm(i)) +
+                double(k) / N_ * static_cast<double>(x_goal_dm(i) - x0_dm(i));
+
     // ---------- Solve ----------
     std::map<std::string, DM> args = {
-        {"x0", DM::zeros(total_vars)},
+        {"x0", initial},
         {"lbx", lbx},
         {"ubx", ubx},
         {"lbg", lbg},
@@ -232,6 +304,9 @@ NLPTrajectoryGeneratorBase::Result NLPTrajectoryGeneratorFixedDt::solve(const DM
         {"p", DM::vertcat({x0_dm, x_goal_dm})}};
 
     auto res = solver(args);
+    const auto stats = solver.stats();
+    if (!stats.at("success").to_bool())
+        throw std::runtime_error("Solver failed: " + stats.at("return_status").to_string());
     DM sol = res.at("x");
 
     // ---------- Extract solution ----------
@@ -250,110 +325,3 @@ NLPTrajectoryGeneratorBase::Result NLPTrajectoryGeneratorFixedDt::solve(const DM
 
     return Result{X_opt, U_opt, T_opt};
 }
-
-// // --------------------- Variable Dt Optimizer --------------------- //
-
-// NLPTrajectoryGeneratorVariableDt::NLPTrajectoryGeneratorVariableDt(double L)
-//     : NLPTrajectoryGeneratorBase(L) {}
-
-// NLPTrajectoryGeneratorVariableDt::Result NLPTrajectoryGeneratorVariableDt::solve(const DM &x0, const DM &x_goal)
-// {
-//     Function f = createDynamicsFunction();
-
-//     std::vector<SX> X, U, T_vec, g;
-//     SX obj = 0;
-
-//     SX X0 = SX::sym("X0", 4);
-//     SX X_goal = SX::sym("X_goal", 4);
-//     X.push_back(X0);
-
-//     for (int k = 0; k < N_; ++k)
-//     {
-//         SX Uk = SX::sym("U_" + std::to_string(k), 2);
-//         SX Tk = SX::sym("T_" + std::to_string(k));
-//         SX Xk = SX::sym("X_" + std::to_string(k + 1), 4);
-
-//         SX x_step = X[k];
-//         SX dt_k = Tk / M_;
-//         for (int i = 0; i < M_; ++i)
-//         {
-//             x_step = rk4(f, x_step, Uk, dt_k);
-//         }
-
-//         X.push_back(Xk);
-//         U.push_back(Uk);
-//         T_vec.push_back(Tk);
-//         g.push_back(Xk - x_step);
-
-//         SX pos_err = Xk(Slice(0, 3)) - X_goal(Slice(0, 3));
-//         obj += dot(pos_err, pos_err) + 0.1 * dot(Uk, Uk) + 0.01 * Tk;
-//     }
-
-//     for (int k = 0; k < N_ - 1; ++k)
-//     {
-//         SX acc = (U[k + 1](0) - U[k](0)) / T_vec[k];
-//         g.push_back(acc);
-//     }
-
-//     SX nlp_x = SX::vertcat({SX::vertcat(U), SX::vertcat(T_vec), SX::vertcat(std::vector<SX>(X.begin() + 1, X.end()))});
-//     SXDict nlp = {{"x", nlp_x}, {"f", obj}, {"g", SX::vertcat(g)}, {"p", SX::vertcat({X0, X_goal})}};
-//     Function solver = nlpsol("solver", "ipopt", nlp);
-
-//     std::vector<double> lbx, ubx;
-//     for (int k = 0; k < N_; ++k)
-//     {
-//         lbx.push_back(v_min_);
-//         ubx.push_back(v_max_);
-//         lbx.push_back(omega_min_);
-//         ubx.push_back(omega_max_);
-//     }
-//     for (int k = 0; k < N_; ++k)
-//     {
-//         lbx.push_back(dt_min_);
-//         ubx.push_back(dt_max_);
-//     }
-//     for (int k = 0; k < N_; ++k)
-//     {
-//         lbx.insert(lbx.end(), {-inf, -inf, -inf, phi_min_});
-//         ubx.insert(ubx.end(), {inf, inf, inf, phi_max_});
-//     }
-
-//     DM lbg = DM::zeros(g.size());
-//     DM ubg = DM::zeros(g.size());
-//     for (int i = 4 * N_; i < g.size(); ++i)
-//     {
-//         lbg(i) = acc_min_;
-//         ubg(i) = acc_max_;
-//     }
-//     std::map<std::string, DM> args = {
-//         {"x0", DM::zeros(nlp_x.size1())},
-//         {"lbx", lbx},
-//         {"ubx", ubx},
-//         {"lbg", lbg},
-//         {"ubg", ubg},
-//         {"p", DM::vertcat({x0, x_goal})}
-//     };
-//     auto res = solver(args);
-
-//     DM sol = res.at("x");
-//     std::vector<DM> U_opt, X_opt, T_opt;
-//     int idx = 0;
-//     for (int k = 0; k < N_; ++k)
-//     {
-//         U_opt.push_back(sol(Slice(idx, idx + 2)));
-//         idx += 2;
-//     }
-//     for (int k = 0; k < N_; ++k)
-//     {
-//         T_opt.push_back(sol(Slice(idx, idx + 1)));
-//         idx += 1;
-//     }
-//     for (int k = 0; k < N_; ++k)
-//     {
-//         X_opt.push_back(sol(Slice(idx, idx + 4)));
-//         idx += 4;
-//     }
-
-//     X_opt.insert(X_opt.begin(), x0);
-//     return Result{X_opt, U_opt, T_opt};
-// }

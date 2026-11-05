@@ -74,7 +74,7 @@ private:
      * @param v_max Maximum velocity.
      * @return Estimated number of steps.
      */
-    int estimateNumberOfOptimizationSteps(const StateMsg &start, const StateMsg &goal, double dt, int v_max) const;
+    int estimateNumberOfOptimizationSteps(const StateMsg &start, const StateMsg &goal, double dt, double speed, double acceleration, double steering_rate, double max_steering) const;
 
     /**
      * @brief Publishes visualization markers for the trajectory, start, and goal poses.
@@ -84,8 +84,7 @@ private:
      */
     void publishTrajectoryMarkers(const TrajectoryMsg &trajectory, const StateMsg &start_state, const StateMsg &goal_state);
 
-    /// Flag to prevent concurrent trajectory generation.
-    bool trajectory_is_being_generated_{false};
+    double wheelbase_;
 
     /// Pointer to the underlying NLP-based trajectory generator.
     std::shared_ptr<NLPTrajectoryGeneratorBase> trajectory_generator_p_;

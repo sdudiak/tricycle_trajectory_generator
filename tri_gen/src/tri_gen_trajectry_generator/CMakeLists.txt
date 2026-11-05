@@ -17,21 +17,7 @@ find_package(tf2_geometry_msgs REQUIRED)
 
 
 
-set(CASADI_INCLUDE_DIR /usr/local/include/casadi)
-
-# find casadi library
-find_library(CASADI_LIBRARY
-    NAMES casadi
-    HINTS ${CASADI_INCLUDE_DIR}/../lib $ENV{CASADI_PREFIX}/lib)
-if(CASADI_LIBRARY)
-    set(CASADI_LIBRARIES ${CASADI_LIBRARIES} ${CASADI_LIBRARY})
-endif()
-
-include_directories(
-  include
-  SYSTEM ${CASADI_INCLUDE_DIR}
-
-)
+include_directories(include)
 
 add_executable(trajectory_generator_node
   src/main.cpp
@@ -48,7 +34,7 @@ ament_target_dependencies(trajectory_generator_node
 )
 
 target_link_libraries(trajectory_generator_node
-  ${CASADI_LIBRARIES}  
+  casadi::casadi
 )
 
 install(TARGETS
@@ -63,6 +49,11 @@ install(DIRECTORY
 )
 
 if(BUILD_TESTING)
+  find_package(ament_cmake_gtest REQUIRED)
+  ament_add_gtest(test_trajectory_generator
+    test/test_trajectory_generator.cpp src/trajectory_generator.cpp)
+  ament_target_dependencies(test_trajectory_generator tri_gen_msgs)
+  target_link_libraries(test_trajectory_generator casadi::casadi)
   find_package(ament_lint_auto REQUIRED)
 
   set(ament_cmake_copyright_FOUND TRUE)
