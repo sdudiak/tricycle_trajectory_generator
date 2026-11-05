@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from tri_gen_msgs/msg/Control.msg
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Duration.idl"
+
+module tri_gen_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "This message describes the desired control command")
+    struct Control {
+      @verbatim (language="comment", text=
+        "dphi/dt – desired angular velocity of the wheel")
+      double omega_phi;
+
+      @verbatim (language="comment", text=
+        "dv/dt – desired linear acceleration")
+      double a;
+
+      @verbatim (language="comment", text=
+        "duration of the given control command")
+      builtin_interfaces::msg::Duration duration;
+    };
+  };
+};

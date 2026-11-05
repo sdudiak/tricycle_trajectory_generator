@@ -1,0 +1,70 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from tri_gen_msgs/srv/GenerateTrajectory.srv
+// generated code does not contain a copyright notice
+
+#include "tri_gen_msgs/msg/State.idl"
+#include "tri_gen_msgs/msg/Trajectory.idl"
+
+module tri_gen_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Service for generating a trajectory between a start and goal state," "\n"
+      "given dynamic and geometric constraints.")
+    struct GenerateTrajectory_Request {
+      @verbatim (language="comment", text=
+        "initial state")
+      tri_gen_msgs::msg::State start;
+
+      @verbatim (language="comment", text=
+        "goal state")
+      tri_gen_msgs::msg::State goal;
+
+      @verbatim (language="comment", text=
+        "trajectory sampling time step (in seconds)")
+      double dt;
+
+      double phi_min;
+
+      double phi_max;
+
+      double omega_phi_min;
+
+      double omega_phi_max;
+
+      double v_min;
+
+      double v_max;
+
+      double a_min;
+
+      double a_max;
+    };
+    struct GenerateTrajectory_Response {
+      tri_gen_msgs::msg::Trajectory trajectory;
+
+      @verbatim (language="comment", text=
+        "total trajectory length (meters)")
+      double total_length;
+
+      @verbatim (language="comment", text=
+        "maximum linear velocity in the trajectory")
+      double max_velocity;
+
+      @verbatim (language="comment", text=
+        "maximum trajectory curvature (1/turn radius)")
+      double max_curvature;
+
+      @verbatim (language="comment", text=
+        "trajectory generation time in milliseconds")
+      double generation_time_ms;
+
+      @verbatim (language="comment", text=
+        "success flag")
+      boolean success;
+
+      @verbatim (language="comment", text=
+        "descriptive message")
+      string message;
+    };
+  };
+};

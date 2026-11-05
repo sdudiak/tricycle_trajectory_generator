@@ -1,0 +1,39 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from tri_gen_msgs/msg/State.msg
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Duration.idl"
+
+module tri_gen_msgs {
+  module msg {
+    struct State {
+      @verbatim (language="comment", text=
+        "X position in the map frame")
+      double x;
+
+      @verbatim (language="comment", text=
+        "Y position in the map frame")
+      double y;
+
+      @verbatim (language="comment", text=
+        "orientation of the entire platform")
+      double theta;
+
+      @verbatim (language="comment", text=
+        "steering angle of the front wheel")
+      double phi;
+
+      @verbatim (language="comment", text=
+        "angular velocity of the steering angle (dphi/dt)")
+      double omega_phi;
+
+      @verbatim (language="comment", text=
+        "linear velocity of the drive wheel")
+      double v;
+
+      @verbatim (language="comment", text=
+        "time since the beginning of the trajectory")
+      builtin_interfaces::msg::Duration stamp_from_start;
+    };
+  };
+};

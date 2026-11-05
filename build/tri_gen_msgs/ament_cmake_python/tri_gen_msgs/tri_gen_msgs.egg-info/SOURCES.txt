@@ -1,0 +1,6 @@
+setup.py
+tri_gen_msgs/__init__.py
+tri_gen_msgs.egg-info/PKG-INFO
+tri_gen_msgs.egg-info/SOURCES.txt
+tri_gen_msgs.egg-info/dependency_links.txt
+tri_gen_msgs.egg-info/top_level.txt

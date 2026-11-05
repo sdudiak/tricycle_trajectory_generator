@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from tri_gen_msgs/msg/Trajectory.msg
+// generated code does not contain a copyright notice
+
+#include "tri_gen_msgs/msg/Control.idl"
+#include "tri_gen_msgs/msg/State.idl"
+
+module tri_gen_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "List of states and controls creating a trajectory")
+    struct Trajectory {
+      @verbatim (language="comment", text=
+        "sequence of all trajectory points (with timestamps)")
+      sequence<tri_gen_msgs::msg::State> states;
+
+      @verbatim (language="comment", text=
+        "sequence of control commands between consecutive points")
+      sequence<tri_gen_msgs::msg::Control> controls;
+    };
+  };
+};

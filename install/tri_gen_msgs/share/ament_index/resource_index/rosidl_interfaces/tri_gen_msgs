@@ -1,0 +1,10 @@
+msg/Control.idl
+msg/Control.msg
+msg/State.idl
+msg/State.msg
+msg/Trajectory.idl
+msg/Trajectory.msg
+srv/GenerateTrajectory.idl
+srv/GenerateTrajectory.srv
+srv/GenerateTrajectory_Request.msg
+srv/GenerateTrajectory_Response.msg

@@ -1,0 +1,26 @@
+trajectory_requester:
+  ros__parameters:
+    start.x: 0.0
+    start.y: 0.0
+    start.theta: 0.0
+    start.phi: 0.0
+    start.omega_phi: 0.0
+    start.v: 0.0
+
+    goal.x: 1.0
+    goal.y: 5.0
+    goal.theta: 0.0
+    goal.phi: 0.0
+    goal.omega_phi: 0.0
+    goal.v: 0.0
+
+    dt: 0.1
+    phi_min: -0.5
+    phi_max: 0.5
+    omega_phi_min: -1.0
+    omega_phi_max: 1.0
+    v_min: -5.0
+    v_max: 5.0
+    a_min: -10.0
+    a_max: 10.0
+  

@@ -1,0 +1,601 @@
+[0.000000] (-) TimerEvent: {}
+[0.000164] (tri_gen_msgs) JobQueued: {'identifier': 'tri_gen_msgs', 'dependencies': OrderedDict()}
+[0.000191] (tri_gen_trajectory_requester) JobQueued: {'identifier': 'tri_gen_trajectory_requester', 'dependencies': OrderedDict()}
+[0.000237] (tri_gen_trajectry_generator) JobQueued: {'identifier': 'tri_gen_trajectry_generator', 'dependencies': OrderedDict([('tri_gen_msgs', '/home/ws/install/tri_gen_msgs')])}
+[0.000264] (tri_gen_msgs) JobStarted: {'identifier': 'tri_gen_msgs'}
+[0.004956] (tri_gen_trajectory_requester) JobStarted: {'identifier': 'tri_gen_trajectory_requester'}
+[0.008936] (tri_gen_msgs) JobProgress: {'identifier': 'tri_gen_msgs', 'progress': 'cmake'}
+[0.009418] (tri_gen_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/ws/tri_gen/src/tri_gen_msgs', '-DCMAKE_INSTALL_PREFIX=/home/ws/install/tri_gen_msgs'], 'cwd': '/home/ws/build/tri_gen_msgs', 'env': OrderedDict([('HOSTNAME', 'stanislaw-GF63-Thin-10SCXR'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/YOUR_USERNAME'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('PWD', '/home/ws/build/tri_gen_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.024126] (tri_gen_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099349] (-) TimerEvent: {}
+[0.168208] (tri_gen_msgs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.199516] (-) TimerEvent: {}
+[0.300132] (-) TimerEvent: {}
+[0.400864] (-) TimerEvent: {}
+[0.464466] (tri_gen_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.470318] (tri_gen_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.482130] (tri_gen_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.500976] (-) TimerEvent: {}
+[0.543510] (tri_gen_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.587891] (tri_gen_msgs) StdoutLine: {'line': b'-- Found builtin_interfaces: 1.2.1 (/opt/ros/humble/share/builtin_interfaces/cmake)\n'}
+[0.601099] (-) TimerEvent: {}
+[0.701306] (-) TimerEvent: {}
+[0.728612] (tri_gen_trajectory_requester) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../../build/tri_gen_trajectory_requester', 'build', '--build-base', '/home/ws/build/tri_gen_trajectory_requester/build', 'install', '--record', '/home/ws/build/tri_gen_trajectory_requester/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/ws/tri_gen/src/tri_gen_trajectory_requester', 'env': {'HOSTNAME': 'stanislaw-GF63-Thin-10SCXR', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/YOUR_USERNAME', 'OLDPWD': '/', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_DOMAIN_ID': '42', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'PWD': '/home/ws/build/tri_gen_trajectory_requester', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/ws/build/tri_gen_trajectory_requester/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ws/install/tri_gen_trajectory_requester/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[0.801428] (-) TimerEvent: {}
+[0.876544] (tri_gen_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.901528] (-) TimerEvent: {}
+[0.995084] (tri_gen_trajectory_requester) StdoutLine: {'line': b'running egg_info\n'}
+[0.995742] (tri_gen_trajectory_requester) StdoutLine: {'line': b'writing ../../../build/tri_gen_trajectory_requester/tri_gen_trajectory_requester.egg-info/PKG-INFO\n'}
+[0.995955] (tri_gen_trajectory_requester) StdoutLine: {'line': b'writing dependency_links to ../../../build/tri_gen_trajectory_requester/tri_gen_trajectory_requester.egg-info/dependency_links.txt\n'}
+[0.996136] (tri_gen_trajectory_requester) StdoutLine: {'line': b'writing entry points to ../../../build/tri_gen_trajectory_requester/tri_gen_trajectory_requester.egg-info/entry_points.txt\n'}
+[0.996220] (tri_gen_trajectory_requester) StdoutLine: {'line': b'writing requirements to ../../../build/tri_gen_trajectory_requester/tri_gen_trajectory_requester.egg-info/requires.txt\n'}
+[0.996279] (tri_gen_trajectory_requester) StdoutLine: {'line': b'writing top-level names to ../../../build/tri_gen_trajectory_requester/tri_gen_trajectory_requester.egg-info/top_level.txt\n'}
+[0.997492] (tri_gen_trajectory_requester) StdoutLine: {'line': b"reading manifest file '../../../build/tri_gen_trajectory_requester/tri_gen_trajectory_requester.egg-info/SOURCES.txt'\n"}
+[0.998157] (tri_gen_trajectory_requester) StdoutLine: {'line': b"writing manifest file '../../../build/tri_gen_trajectory_requester/tri_gen_trajectory_requester.egg-info/SOURCES.txt'\n"}
+[0.998240] (tri_gen_trajectory_requester) StdoutLine: {'line': b'running build\n'}
+[0.998299] (tri_gen_trajectory_requester) StdoutLine: {'line': b'running build_py\n'}
+[0.998566] (tri_gen_trajectory_requester) StdoutLine: {'line': b'running install\n'}
+[0.998811] (tri_gen_trajectory_requester) StdoutLine: {'line': b'running install_lib\n'}
+[0.999623] (tri_gen_trajectory_requester) StdoutLine: {'line': b'running install_data\n'}
+[0.999722] (tri_gen_trajectory_requester) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.001050] (tri_gen_trajectory_requester) StdoutLine: {'line': b"removing '/home/ws/install/tri_gen_trajectory_requester/lib/python3.10/site-packages/tri_gen_trajectory_requester-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.001304] (tri_gen_trajectory_requester) StdoutLine: {'line': b'Copying ../../../build/tri_gen_trajectory_requester/tri_gen_trajectory_requester.egg-info to /home/ws/install/tri_gen_trajectory_requester/lib/python3.10/site-packages/tri_gen_trajectory_requester-0.0.0-py3.10.egg-info\n'}
+[1.001574] (-) TimerEvent: {}
+[1.001904] (tri_gen_trajectory_requester) StdoutLine: {'line': b'running install_scripts\n'}
+[1.017741] (tri_gen_trajectory_requester) StdoutLine: {'line': b'Installing trajectory_requester script to /home/ws/install/tri_gen_trajectory_requester/lib/tri_gen_trajectory_requester\n'}
+[1.017980] (tri_gen_trajectory_requester) StdoutLine: {'line': b"writing list of installed files to '/home/ws/build/tri_gen_trajectory_requester/install.log'\n"}
+[1.044726] (tri_gen_trajectory_requester) CommandEnded: {'returncode': 0}
+[1.052627] (tri_gen_trajectory_requester) JobEnded: {'identifier': 'tri_gen_trajectory_requester', 'rc': 0}
+[1.064422] (tri_gen_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.101674] (-) TimerEvent: {}
+[1.201935] (-) TimerEvent: {}
+[1.302316] (-) TimerEvent: {}
+[1.402847] (-) TimerEvent: {}
+[1.452123] (tri_gen_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.503027] (-) TimerEvent: {}
+[1.519326] (tri_gen_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[1.525235] (tri_gen_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[1.603231] (-) TimerEvent: {}
+[1.622237] (tri_gen_msgs) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[1.622948] (tri_gen_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.623278] (tri_gen_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[1.623553] (tri_gen_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.698899] (tri_gen_msgs) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.703392] (-) TimerEvent: {}
+[1.803949] (-) TimerEvent: {}
+[1.855727] (tri_gen_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.904172] (-) TimerEvent: {}
+[1.984856] (tri_gen_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[2.004356] (-) TimerEvent: {}
+[2.026892] (tri_gen_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/ws/build/tri_gen_msgs\n'}
+[2.044300] (tri_gen_msgs) CommandEnded: {'returncode': 0}
+[2.046504] (tri_gen_msgs) JobProgress: {'identifier': 'tri_gen_msgs', 'progress': 'build'}
+[2.050387] (tri_gen_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ws/build/tri_gen_msgs', '--', '-j8', '-l8'], 'cwd': '/home/ws/build/tri_gen_msgs', 'env': OrderedDict([('HOSTNAME', 'stanislaw-GF63-Thin-10SCXR'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/YOUR_USERNAME'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('PWD', '/home/ws/build/tri_gen_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[2.104576] (-) TimerEvent: {}
+[2.168195] (tri_gen_msgs) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[2.200309] (tri_gen_msgs) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[2.204759] (-) TimerEvent: {}
+[2.231980] (tri_gen_msgs) StdoutLine: {'line': b'[  3%] Built target ament_cmake_python_copy_tri_gen_msgs\n'}
+[2.304915] (-) TimerEvent: {}
+[2.405536] (-) TimerEvent: {}
+[2.505845] (-) TimerEvent: {}
+[2.549386] (tri_gen_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[2.549844] (tri_gen_msgs) StdoutLine: {'line': b'creating tri_gen_msgs.egg-info\n'}
+[2.549979] (tri_gen_msgs) StdoutLine: {'line': b'writing tri_gen_msgs.egg-info/PKG-INFO\n'}
+[2.550095] (tri_gen_msgs) StdoutLine: {'line': b'writing dependency_links to tri_gen_msgs.egg-info/dependency_links.txt\n'}
+[2.550210] (tri_gen_msgs) StdoutLine: {'line': b'writing top-level names to tri_gen_msgs.egg-info/top_level.txt\n'}
+[2.550329] (tri_gen_msgs) StdoutLine: {'line': b"writing manifest file 'tri_gen_msgs.egg-info/SOURCES.txt'\n"}
+[2.551695] (tri_gen_msgs) StdoutLine: {'line': b"reading manifest file 'tri_gen_msgs.egg-info/SOURCES.txt'\n"}
+[2.552070] (tri_gen_msgs) StdoutLine: {'line': b"writing manifest file 'tri_gen_msgs.egg-info/SOURCES.txt'\n"}
+[2.572272] (tri_gen_msgs) StdoutLine: {'line': b'[  3%] Built target ament_cmake_python_build_tri_gen_msgs_egg\n'}
+[2.605928] (-) TimerEvent: {}
+[2.706165] (-) TimerEvent: {}
+[2.806432] (-) TimerEvent: {}
+[2.906805] (-) TimerEvent: {}
+[2.908352] (tri_gen_msgs) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_generator_c.dir/rosidl_generator_c/tri_gen_msgs/msg/detail/trajectory__functions.c.o\x1b[0m\n'}
+[2.908617] (tri_gen_msgs) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_generator_c.dir/rosidl_generator_c/tri_gen_msgs/msg/detail/state__functions.c.o\x1b[0m\n'}
+[2.908726] (tri_gen_msgs) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_generator_c.dir/rosidl_generator_c/tri_gen_msgs/srv/detail/generate_trajectory__functions.c.o\x1b[0m\n'}
+[2.909344] (tri_gen_msgs) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_generator_c.dir/rosidl_generator_c/tri_gen_msgs/msg/detail/control__functions.c.o\x1b[0m\n'}
+[2.955834] (tri_gen_msgs) StdoutLine: {'line': b'[ 10%] Built target tri_gen_msgs__cpp\n'}
+[2.963725] (tri_gen_msgs) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.963957] (tri_gen_msgs) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.964816] (tri_gen_msgs) StdoutLine: {'line': b'[ 16%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[2.977252] (tri_gen_msgs) StdoutLine: {'line': b'[ 18%] \x1b[32m\x1b[1mLinking C shared library libtri_gen_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[3.005142] (tri_gen_msgs) StdoutLine: {'line': b'[ 18%] Built target tri_gen_msgs__rosidl_generator_c\n'}
+[3.006881] (-) TimerEvent: {}
+[3.012846] (tri_gen_msgs) StdoutLine: {'line': b'[ 20%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[3.014689] (tri_gen_msgs) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[3.014897] (tri_gen_msgs) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[3.106976] (-) TimerEvent: {}
+[3.207366] (-) TimerEvent: {}
+[3.307747] (-) TimerEvent: {}
+[3.408152] (-) TimerEvent: {}
+[3.476457] (tri_gen_msgs) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tri_gen_msgs/msg/trajectory__type_support.cpp.o\x1b[0m\n'}
+[3.477000] (tri_gen_msgs) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tri_gen_msgs/msg/state__type_support.cpp.o\x1b[0m\n'}
+[3.477540] (tri_gen_msgs) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tri_gen_msgs/msg/control__type_support.cpp.o\x1b[0m\n'}
+[3.508241] (-) TimerEvent: {}
+[3.509631] (tri_gen_msgs) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tri_gen_msgs/srv/generate_trajectory__type_support.cpp.o\x1b[0m\n'}
+[3.533116] (tri_gen_msgs) StdoutLine: {'line': b'[ 32%] \x1b[32m\x1b[1mLinking CXX shared library libtri_gen_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[3.577200] (tri_gen_msgs) StdoutLine: {'line': b'[ 32%] Built target tri_gen_msgs__rosidl_typesupport_c\n'}
+[3.578230] (tri_gen_msgs) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tri_gen_msgs/msg/detail/control__type_support_c.cpp.o\x1b[0m\n'}
+[3.578752] (tri_gen_msgs) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tri_gen_msgs/msg/detail/trajectory__type_support_c.cpp.o\x1b[0m\n'}
+[3.578942] (tri_gen_msgs) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tri_gen_msgs/msg/detail/state__type_support_c.cpp.o\x1b[0m\n'}
+[3.586255] (tri_gen_msgs) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tri_gen_msgs/srv/detail/generate_trajectory__type_support_c.cpp.o\x1b[0m\n'}
+[3.608424] (-) TimerEvent: {}
+[3.708814] (-) TimerEvent: {}
+[3.775673] (tri_gen_msgs) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tri_gen_msgs/msg/state__type_support.cpp.o\x1b[0m\n'}
+[3.808915] (-) TimerEvent: {}
+[3.878982] (tri_gen_msgs) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tri_gen_msgs/msg/detail/state__type_support.cpp.o\x1b[0m\n'}
+[3.909049] (-) TimerEvent: {}
+[3.926240] (tri_gen_msgs) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tri_gen_msgs/msg/detail/dds_fastrtps/state__type_support.cpp.o\x1b[0m\n'}
+[3.958725] (tri_gen_msgs) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tri_gen_msgs/msg/detail/state__type_support.c.o\x1b[0m\n'}
+[3.998299] (tri_gen_msgs) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tri_gen_msgs/msg/detail/control__type_support.c.o\x1b[0m\n'}
+[4.009127] (-) TimerEvent: {}
+[4.028851] (tri_gen_msgs) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tri_gen_msgs/msg/detail/dds_fastrtps/control__type_support.cpp.o\x1b[0m\n'}
+[4.032488] (tri_gen_msgs) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tri_gen_msgs/msg/detail/dds_fastrtps/trajectory__type_support.cpp.o\x1b[0m\n'}
+[4.041856] (tri_gen_msgs) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tri_gen_msgs/msg/detail/trajectory__type_support.c.o\x1b[0m\n'}
+[4.065881] (tri_gen_msgs) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tri_gen_msgs/srv/detail/generate_trajectory__type_support.c.o\x1b[0m\n'}
+[4.082314] (tri_gen_msgs) StdoutLine: {'line': b'[ 58%] \x1b[32m\x1b[1mLinking CXX shared library libtri_gen_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[4.093160] (tri_gen_msgs) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tri_gen_msgs/srv/detail/dds_fastrtps/generate_trajectory__type_support.cpp.o\x1b[0m\n'}
+[4.109233] (-) TimerEvent: {}
+[4.113274] (tri_gen_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32m\x1b[1mLinking C shared library libtri_gen_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[4.153314] (tri_gen_msgs) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tri_gen_msgs/msg/control__type_support.cpp.o\x1b[0m\n'}
+[4.164555] (tri_gen_msgs) StdoutLine: {'line': b'[ 63%] Built target tri_gen_msgs__rosidl_typesupport_introspection_c\n'}
+[4.175120] (tri_gen_msgs) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tri_gen_msgs/msg/trajectory__type_support.cpp.o\x1b[0m\n'}
+[4.205413] (tri_gen_msgs) StdoutLine: {'line': b'[ 65%] Built target tri_gen_msgs__rosidl_typesupport_fastrtps_c\n'}
+[4.209336] (-) TimerEvent: {}
+[4.215126] (tri_gen_msgs) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tri_gen_msgs/srv/generate_trajectory__type_support.cpp.o\x1b[0m\n'}
+[4.309442] (-) TimerEvent: {}
+[4.392272] (tri_gen_msgs) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tri_gen_msgs/msg/detail/control__type_support.cpp.o\x1b[0m\n'}
+[4.409548] (-) TimerEvent: {}
+[4.476639] (tri_gen_msgs) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tri_gen_msgs/msg/detail/trajectory__type_support.cpp.o\x1b[0m\n'}
+[4.509650] (-) TimerEvent: {}
+[4.538522] (tri_gen_msgs) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/tri_gen_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tri_gen_msgs/srv/detail/generate_trajectory__type_support.cpp.o\x1b[0m\n'}
+[4.577705] (tri_gen_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32m\x1b[1mLinking CXX shared library libtri_gen_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[4.609766] (-) TimerEvent: {}
+[4.626286] (tri_gen_msgs) StdoutLine: {'line': b'[ 74%] Built target tri_gen_msgs__rosidl_typesupport_cpp\n'}
+[4.664930] (tri_gen_msgs) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library libtri_gen_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[4.709888] (-) TimerEvent: {}
+[4.743953] (tri_gen_msgs) StdoutLine: {'line': b'[ 76%] Built target tri_gen_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[4.809997] (-) TimerEvent: {}
+[4.910291] (-) TimerEvent: {}
+[4.919028] (tri_gen_msgs) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking CXX shared library libtri_gen_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[4.990345] (tri_gen_msgs) StdoutLine: {'line': b'[ 78%] Built target tri_gen_msgs__rosidl_typesupport_introspection_cpp\n'}
+[5.010497] (-) TimerEvent: {}
+[5.021788] (tri_gen_msgs) StdoutLine: {'line': b'[ 78%] Built target tri_gen_msgs\n'}
+[5.079899] (tri_gen_msgs) StdoutLine: {'line': b'[ 80%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[5.110690] (-) TimerEvent: {}
+[5.211273] (-) TimerEvent: {}
+[5.312020] (-) TimerEvent: {}
+[5.412815] (-) TimerEvent: {}
+[5.513504] (-) TimerEvent: {}
+[5.613855] (-) TimerEvent: {}
+[5.714085] (-) TimerEvent: {}
+[5.814343] (-) TimerEvent: {}
+[5.914688] (-) TimerEvent: {}
+[6.015225] (-) TimerEvent: {}
+[6.115501] (-) TimerEvent: {}
+[6.215744] (-) TimerEvent: {}
+[6.315974] (-) TimerEvent: {}
+[6.400328] (tri_gen_msgs) StdoutLine: {'line': b'[ 80%] Built target tri_gen_msgs__py\n'}
+[6.412717] (tri_gen_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_generator_py.dir/rosidl_generator_py/tri_gen_msgs/msg/_control_s.c.o\x1b[0m\n'}
+[6.412940] (tri_gen_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_generator_py.dir/rosidl_generator_py/tri_gen_msgs/msg/_trajectory_s.c.o\x1b[0m\n'}
+[6.413092] (tri_gen_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_generator_py.dir/rosidl_generator_py/tri_gen_msgs/msg/_state_s.c.o\x1b[0m\n'}
+[6.413190] (tri_gen_msgs) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_generator_py.dir/rosidl_generator_py/tri_gen_msgs/srv/_generate_trajectory_s.c.o\x1b[0m\n'}
+[6.416087] (-) TimerEvent: {}
+[6.516398] (-) TimerEvent: {}
+[6.527948] (tri_gen_msgs) StdoutLine: {'line': b'[ 89%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tri_gen_msgs/libtri_gen_msgs__rosidl_generator_py.so\x1b[0m\n'}
+[6.565667] (tri_gen_msgs) StdoutLine: {'line': b'[ 89%] Built target tri_gen_msgs__rosidl_generator_py\n'}
+[6.579961] (tri_gen_msgs) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/tri_gen_msgs/_tri_gen_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[6.580186] (tri_gen_msgs) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/tri_gen_msgs/_tri_gen_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[6.580308] (tri_gen_msgs) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/tri_gen_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tri_gen_msgs/_tri_gen_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[6.616509] (-) TimerEvent: {}
+[6.700243] (tri_gen_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.700439] (tri_gen_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.700532] (tri_gen_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[6.716606] (-) TimerEvent: {}
+[6.735781] (tri_gen_msgs) StdoutLine: {'line': b'[100%] Built target tri_gen_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[6.736271] (tri_gen_msgs) StdoutLine: {'line': b'[100%] Built target tri_gen_msgs__rosidl_typesupport_c__pyext\n'}
+[6.736408] (tri_gen_msgs) StdoutLine: {'line': b'[100%] Built target tri_gen_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[6.749205] (tri_gen_msgs) CommandEnded: {'returncode': 0}
+[6.750318] (tri_gen_msgs) JobProgress: {'identifier': 'tri_gen_msgs', 'progress': 'install'}
+[6.759198] (tri_gen_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ws/build/tri_gen_msgs'], 'cwd': '/home/ws/build/tri_gen_msgs', 'env': OrderedDict([('HOSTNAME', 'stanislaw-GF63-Thin-10SCXR'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/YOUR_USERNAME'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('PWD', '/home/ws/build/tri_gen_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[6.766406] (tri_gen_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[6.766705] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/ament_index/resource_index/rosidl_interfaces/tri_gen_msgs\n'}
+[6.766889] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs\n'}
+[6.767075] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg\n'}
+[6.767252] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/trajectory.h\n'}
+[6.767407] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail\n'}
+[6.767568] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__struct.h\n'}
+[6.767719] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__functions.h\n'}
+[6.767883] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__type_support.h\n'}
+[6.768030] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__functions.h\n'}
+[6.768190] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__functions.c\n'}
+[6.768336] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__type_support.h\n'}
+[6.768495] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__type_support.h\n'}
+[6.768657] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__struct.h\n'}
+[6.768820] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__functions.c\n'}
+[6.768969] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__functions.h\n'}
+[6.769138] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__struct.h\n'}
+[6.769305] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__functions.c\n'}
+[6.769435] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/control.h\n'}
+[6.769577] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[6.769723] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/state.h\n'}
+[6.769868] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv\n'}
+[6.769995] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail\n'}
+[6.770119] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__functions.c\n'}
+[6.770289] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__struct.h\n'}
+[6.770466] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__functions.h\n'}
+[6.770616] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__type_support.h\n'}
+[6.770773] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/generate_trajectory.h\n'}
+[6.770928] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/environment/library_path.sh\n'}
+[6.771075] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/environment/library_path.dsv\n'}
+[6.771201] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_generator_c.so\n'}
+[6.771347] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_generator_c.so" to ""\n'}
+[6.771514] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs\n'}
+[6.771672] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg\n'}
+[6.771830] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[6.771986] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail\n'}
+[6.772146] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__rosidl_typesupport_fastrtps_c.h\n'}
+[6.772314] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__rosidl_typesupport_fastrtps_c.h\n'}
+[6.772467] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__rosidl_typesupport_fastrtps_c.h\n'}
+[6.772610] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv\n'}
+[6.772737] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail\n'}
+[6.772864] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__rosidl_typesupport_fastrtps_c.h\n'}
+[6.773027] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[6.773165] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[6.773314] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs\n'}
+[6.773488] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg\n'}
+[6.773649] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[6.773816] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail\n'}
+[6.773961] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__type_support.c\n'}
+[6.774108] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__rosidl_typesupport_introspection_c.h\n'}
+[6.774194] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__type_support.c\n'}
+[6.774286] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__rosidl_typesupport_introspection_c.h\n'}
+[6.774371] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__type_support.c\n'}
+[6.774463] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__rosidl_typesupport_introspection_c.h\n'}
+[6.774547] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv\n'}
+[6.774630] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail\n'}
+[6.774728] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__rosidl_typesupport_introspection_c.h\n'}
+[6.774820] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__type_support.c\n'}
+[6.774907] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_introspection_c.so\n'}
+[6.774991] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[6.775082] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_c.so\n'}
+[6.775175] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_c.so" to ""\n'}
+[6.775262] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs\n'}
+[6.775353] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg\n'}
+[6.775444] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/state.hpp\n'}
+[6.775539] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/trajectory.hpp\n'}
+[6.775622] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail\n'}
+[6.775696] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__traits.hpp\n'}
+[6.775803] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__builder.hpp\n'}
+[6.775884] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__type_support.hpp\n'}
+[6.775994] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__struct.hpp\n'}
+[6.776081] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__type_support.hpp\n'}
+[6.776175] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__type_support.hpp\n'}
+[6.776260] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__traits.hpp\n'}
+[6.776352] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__builder.hpp\n'}
+[6.776443] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__struct.hpp\n'}
+[6.776526] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__builder.hpp\n'}
+[6.776611] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__traits.hpp\n'}
+[6.776684] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__struct.hpp\n'}
+[6.776757] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/control.hpp\n'}
+[6.776838] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[6.776922] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv\n'}
+[6.776994] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/generate_trajectory.hpp\n'}
+[6.777125] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail\n'}
+[6.777211] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__struct.hpp\n'}
+[6.777294] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__traits.hpp\n'}
+[6.777376] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__builder.hpp\n'}
+[6.777461] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__type_support.hpp\n'}
+[6.777552] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs\n'}
+[6.777635] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg\n'}
+[6.777723] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[6.777816] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail\n'}
+[6.777900] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.777993] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.778078] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/dds_fastrtps\n'}
+[6.778171] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.778257] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv\n'}
+[6.778341] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail\n'}
+[6.778424] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[6.778509] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/dds_fastrtps\n'}
+[6.778591] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[6.778685] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[6.778793] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs\n'}
+[6.778891] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg\n'}
+[6.778975] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail\n'}
+[6.779064] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__type_support.cpp\n'}
+[6.779140] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.779213] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__type_support.cpp\n'}
+[6.779303] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__type_support.cpp\n'}
+[6.779377] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/control__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.779451] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/msg/detail/trajectory__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.779523] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv\n'}
+[6.779597] (tri_gen_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail\n'}
+[6.779670] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__rosidl_typesupport_introspection_cpp.hpp\n'}
+[6.779743] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/include/tri_gen_msgs/tri_gen_msgs/srv/detail/generate_trajectory__type_support.cpp\n'}
+[6.779817] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[6.779891] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[6.779964] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_cpp.so\n'}
+[6.780037] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[6.780110] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/environment/pythonpath.sh\n'}
+[6.780183] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/environment/pythonpath.dsv\n'}
+[6.780256] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs-0.0.0-py3.10.egg-info\n'}
+[6.780332] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[6.780406] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[6.780480] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[6.780560] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[6.780633] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs\n'}
+[6.780706] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/_tri_gen_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[6.780785] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg\n'}
+[6.780859] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/_state_s.c\n'}
+[6.780932] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/__init__.py\n'}
+[6.781005] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/_trajectory_s.c\n'}
+[6.781089] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/_control.py\n'}
+[6.781166] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/_trajectory.py\n'}
+[6.781239] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/_state.py\n'}
+[6.781312] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/_control_s.c\n'}
+[6.781386] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/__init__.py\n'}
+[6.781458] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/libtri_gen_msgs__rosidl_generator_py.so\n'}
+[6.781536] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/_tri_gen_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[6.781610] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.781684] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.781758] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.781832] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/_tri_gen_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[6.781906] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/srv\n'}
+[6.781979] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/srv/_generate_trajectory.py\n'}
+[6.782052] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/srv/_generate_trajectory_s.c\n'}
+[6.782125] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/srv/__init__.py\n'}
+[6.809569] (tri_gen_msgs) StdoutLine: {'line': b"Listing '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs'...\n"}
+[6.809768] (tri_gen_msgs) StdoutLine: {'line': b"Compiling '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/__init__.py'...\n"}
+[6.809865] (tri_gen_msgs) StdoutLine: {'line': b"Listing '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg'...\n"}
+[6.809954] (tri_gen_msgs) StdoutLine: {'line': b"Compiling '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/__init__.py'...\n"}
+[6.810042] (tri_gen_msgs) StdoutLine: {'line': b"Compiling '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/_control.py'...\n"}
+[6.810128] (tri_gen_msgs) StdoutLine: {'line': b"Compiling '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/_state.py'...\n"}
+[6.810213] (tri_gen_msgs) StdoutLine: {'line': b"Compiling '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/msg/_trajectory.py'...\n"}
+[6.810296] (tri_gen_msgs) StdoutLine: {'line': b"Listing '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/srv'...\n"}
+[6.810382] (tri_gen_msgs) StdoutLine: {'line': b"Compiling '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/srv/__init__.py'...\n"}
+[6.810467] (tri_gen_msgs) StdoutLine: {'line': b"Compiling '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/srv/_generate_trajectory.py'...\n"}
+[6.813461] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.813656] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.813802] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.814026] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.814177] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[6.814377] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages/tri_gen_msgs/tri_gen_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[6.814506] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_generator_py.so\n'}
+[6.814700] (tri_gen_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_msgs/lib/libtri_gen_msgs__rosidl_generator_py.so" to ""\n'}
+[6.814827] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/msg/State.idl\n'}
+[6.814941] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/msg/Control.idl\n'}
+[6.815049] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/msg/Trajectory.idl\n'}
+[6.815172] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/srv/GenerateTrajectory.idl\n'}
+[6.815279] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/msg/State.msg\n'}
+[6.815389] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/msg/Control.msg\n'}
+[6.815496] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/msg/Trajectory.msg\n'}
+[6.815608] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/srv/GenerateTrajectory.srv\n'}
+[6.815714] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/srv/GenerateTrajectory_Request.msg\n'}
+[6.815819] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/srv/GenerateTrajectory_Response.msg\n'}
+[6.815922] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/ament_index/resource_index/package_run_dependencies/tri_gen_msgs\n'}
+[6.816026] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/ament_index/resource_index/parent_prefix_path/tri_gen_msgs\n'}
+[6.816131] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/environment/ament_prefix_path.sh\n'}
+[6.816237] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/environment/ament_prefix_path.dsv\n'}
+[6.816344] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/environment/path.sh\n'}
+[6.816453] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/environment/path.dsv\n'}
+[6.816561] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/local_setup.bash\n'}
+[6.816664] (-) TimerEvent: {}
+[6.816787] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/local_setup.sh\n'}
+[6.816905] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/local_setup.zsh\n'}
+[6.817021] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/local_setup.dsv\n'}
+[6.817129] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/package.dsv\n'}
+[6.817242] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/ament_index/resource_index/packages/tri_gen_msgs\n'}
+[6.817353] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/export_tri_gen_msgs__rosidl_generator_cExport.cmake\n'}
+[6.817462] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/export_tri_gen_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[6.817571] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/export_tri_gen_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[6.817680] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/export_tri_gen_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[6.817798] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/tri_gen_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[6.817906] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/tri_gen_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[6.818013] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/tri_gen_msgs__rosidl_typesupport_cExport.cmake\n'}
+[6.818120] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/tri_gen_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[6.818227] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/export_tri_gen_msgs__rosidl_generator_cppExport.cmake\n'}
+[6.818334] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/export_tri_gen_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[6.818443] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/export_tri_gen_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[6.818557] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/tri_gen_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[6.818663] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/tri_gen_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[6.818769] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/tri_gen_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[6.818877] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/tri_gen_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[6.818985] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/export_tri_gen_msgs__rosidl_generator_pyExport.cmake\n'}
+[6.819095] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/export_tri_gen_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[6.819202] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[6.819310] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[6.819418] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[6.819537] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[6.819645] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[6.819753] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[6.819859] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[6.819954] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/tri_gen_msgsConfig.cmake\n'}
+[6.820046] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake/tri_gen_msgsConfig-version.cmake\n'}
+[6.820136] (tri_gen_msgs) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_msgs/share/tri_gen_msgs/package.xml\n'}
+[6.821695] (tri_gen_msgs) CommandEnded: {'returncode': 0}
+[6.833651] (tri_gen_msgs) JobEnded: {'identifier': 'tri_gen_msgs', 'rc': 0}
+[6.834622] (tri_gen_trajectry_generator) JobStarted: {'identifier': 'tri_gen_trajectry_generator'}
+[6.838396] (tri_gen_trajectry_generator) JobProgress: {'identifier': 'tri_gen_trajectry_generator', 'progress': 'cmake'}
+[6.838836] (tri_gen_trajectry_generator) Command: {'cmd': ['/usr/bin/cmake', '/home/ws/tri_gen/src/tri_gen_trajectry_generator', '-DCMAKE_INSTALL_PREFIX=/home/ws/install/tri_gen_trajectry_generator'], 'cwd': '/home/ws/build/tri_gen_trajectry_generator', 'env': OrderedDict([('HOSTNAME', 'stanislaw-GF63-Thin-10SCXR'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ws/install/tri_gen_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/YOUR_USERNAME'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/ws/install/tri_gen_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('PWD', '/home/ws/build/tri_gen_trajectry_generator'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ws/install/tri_gen_msgs:/opt/ros/humble')]), 'shell': False}
+[6.879085] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[6.916818] (-) TimerEvent: {}
+[6.948766] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[6.974022] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[7.017042] (-) TimerEvent: {}
+[7.117742] (-) TimerEvent: {}
+[7.197925] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[7.217937] (-) TimerEvent: {}
+[7.285165] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[7.286630] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[7.289203] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[7.319003] (-) TimerEvent: {}
+[7.320663] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[7.419139] (-) TimerEvent: {}
+[7.469135] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[7.476584] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[7.476761] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[7.477246] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[7.479595] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[7.519240] (-) TimerEvent: {}
+[7.619625] (-) TimerEvent: {}
+[7.639499] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[7.719758] (-) TimerEvent: {}
+[7.753332] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[7.800484] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[7.807930] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[7.819871] (-) TimerEvent: {}
+[7.822217] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[7.843756] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[7.873630] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[7.920017] (-) TimerEvent: {}
+[7.967926] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[7.973836] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[8.020137] (-) TimerEvent: {}
+[8.120524] (-) TimerEvent: {}
+[8.153820] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[8.220745] (-) TimerEvent: {}
+[8.286560] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[8.320940] (-) TimerEvent: {}
+[8.421597] (-) TimerEvent: {}
+[8.471590] (tri_gen_trajectry_generator) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[8.513993] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[8.521718] (-) TimerEvent: {}
+[8.622269] (-) TimerEvent: {}
+[8.722986] (-) TimerEvent: {}
+[8.746091] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[8.747608] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[8.823173] (-) TimerEvent: {}
+[8.923892] (-) TimerEvent: {}
+[8.981738] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[8.985753] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[9.024094] (-) TimerEvent: {}
+[9.124724] (-) TimerEvent: {}
+[9.225357] (-) TimerEvent: {}
+[9.236900] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found tri_gen_msgs: 0.0.0 (/home/ws/install/tri_gen_msgs/share/tri_gen_msgs/cmake)\n'}
+[9.324810] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found visualization_msgs: 4.9.0 (/opt/ros/humble/share/visualization_msgs/cmake)\n'}
+[9.325415] (-) TimerEvent: {}
+[9.406228] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found tf2: 0.25.13 (/opt/ros/humble/share/tf2/cmake)\n'}
+[9.419306] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.13 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[9.425493] (-) TimerEvent: {}
+[9.435575] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[9.437529] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[9.437658] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[9.525582] (-) TimerEvent: {}
+[9.543638] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[9.621559] (tri_gen_trajectry_generator) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[9.621964] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/ws/tri_gen/src/tri_gen_trajectry_generator/include\n'}
+[9.622097] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[9.623121] (tri_gen_trajectry_generator) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[9.624454] (tri_gen_trajectry_generator) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[9.625410] (tri_gen_trajectry_generator) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[9.625642] (-) TimerEvent: {}
+[9.627563] (tri_gen_trajectry_generator) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[9.627698] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[9.628679] (tri_gen_trajectry_generator) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[9.630090] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.646538] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Generating done\n'}
+[9.652074] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Build files have been written to: /home/ws/build/tri_gen_trajectry_generator\n'}
+[9.661436] (tri_gen_trajectry_generator) CommandEnded: {'returncode': 0}
+[9.661865] (tri_gen_trajectry_generator) JobProgress: {'identifier': 'tri_gen_trajectry_generator', 'progress': 'build'}
+[9.662084] (tri_gen_trajectry_generator) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ws/build/tri_gen_trajectry_generator', '--', '-j8', '-l8'], 'cwd': '/home/ws/build/tri_gen_trajectry_generator', 'env': OrderedDict([('HOSTNAME', 'stanislaw-GF63-Thin-10SCXR'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ws/install/tri_gen_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/YOUR_USERNAME'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/ws/install/tri_gen_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('PWD', '/home/ws/build/tri_gen_trajectry_generator'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ws/install/tri_gen_msgs:/opt/ros/humble')]), 'shell': False}
+[9.699130] (tri_gen_trajectry_generator) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/trajectory_generator_node.dir/src/main.cpp.o\x1b[0m\n'}
+[9.699356] (tri_gen_trajectry_generator) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/trajectory_generator_node.dir/src/trajectory_generator.cpp.o\x1b[0m\n'}
+[9.699463] (tri_gen_trajectry_generator) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/trajectory_generator_node.dir/src/trajectory_generator_node.cpp.o\x1b[0m\n'}
+[9.725751] (-) TimerEvent: {}
+[9.826039] (-) TimerEvent: {}
+[9.926337] (-) TimerEvent: {}
+[10.026612] (-) TimerEvent: {}
+[10.126871] (-) TimerEvent: {}
+[10.227256] (-) TimerEvent: {}
+[10.327587] (-) TimerEvent: {}
+[10.427975] (-) TimerEvent: {}
+[10.528326] (-) TimerEvent: {}
+[10.628607] (-) TimerEvent: {}
+[10.728906] (-) TimerEvent: {}
+[10.829195] (-) TimerEvent: {}
+[10.929463] (-) TimerEvent: {}
+[11.029706] (-) TimerEvent: {}
+[11.129981] (-) TimerEvent: {}
+[11.230255] (-) TimerEvent: {}
+[11.330540] (-) TimerEvent: {}
+[11.430914] (-) TimerEvent: {}
+[11.531213] (-) TimerEvent: {}
+[11.631537] (-) TimerEvent: {}
+[11.731860] (-) TimerEvent: {}
+[11.832166] (-) TimerEvent: {}
+[11.932473] (-) TimerEvent: {}
+[12.032776] (-) TimerEvent: {}
+[12.133096] (-) TimerEvent: {}
+[12.233409] (-) TimerEvent: {}
+[12.333708] (-) TimerEvent: {}
+[12.434037] (-) TimerEvent: {}
+[12.534362] (-) TimerEvent: {}
+[12.634671] (-) TimerEvent: {}
+[12.734986] (-) TimerEvent: {}
+[12.835306] (-) TimerEvent: {}
+[12.935644] (-) TimerEvent: {}
+[13.035927] (-) TimerEvent: {}
+[13.136183] (-) TimerEvent: {}
+[13.236459] (-) TimerEvent: {}
+[13.336711] (-) TimerEvent: {}
+[13.437010] (-) TimerEvent: {}
+[13.537753] (-) TimerEvent: {}
+[13.638007] (-) TimerEvent: {}
+[13.738278] (-) TimerEvent: {}
+[13.838575] (-) TimerEvent: {}
+[13.938909] (-) TimerEvent: {}
+[14.039223] (-) TimerEvent: {}
+[14.139463] (-) TimerEvent: {}
+[14.239719] (-) TimerEvent: {}
+[14.339951] (-) TimerEvent: {}
+[14.440257] (-) TimerEvent: {}
+[14.540517] (-) TimerEvent: {}
+[14.640775] (-) TimerEvent: {}
+[14.741116] (-) TimerEvent: {}
+[14.841399] (-) TimerEvent: {}
+[14.941688] (-) TimerEvent: {}
+[15.041965] (-) TimerEvent: {}
+[15.142256] (-) TimerEvent: {}
+[15.242563] (-) TimerEvent: {}
+[15.342850] (-) TimerEvent: {}
+[15.443200] (-) TimerEvent: {}
+[15.543620] (-) TimerEvent: {}
+[15.627399] (tri_gen_trajectry_generator) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable trajectory_generator_node\x1b[0m\n'}
+[15.643743] (-) TimerEvent: {}
+[15.744045] (-) TimerEvent: {}
+[15.844358] (-) TimerEvent: {}
+[15.944719] (-) TimerEvent: {}
+[16.045145] (-) TimerEvent: {}
+[16.128694] (tri_gen_trajectry_generator) StdoutLine: {'line': b'[100%] Built target trajectory_generator_node\n'}
+[16.138572] (tri_gen_trajectry_generator) CommandEnded: {'returncode': 0}
+[16.139158] (tri_gen_trajectry_generator) JobProgress: {'identifier': 'tri_gen_trajectry_generator', 'progress': 'install'}
+[16.139422] (tri_gen_trajectry_generator) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/ws/build/tri_gen_trajectry_generator'], 'cwd': '/home/ws/build/tri_gen_trajectry_generator', 'env': OrderedDict([('HOSTNAME', 'stanislaw-GF63-Thin-10SCXR'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/ws/install/tri_gen_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/YOUR_USERNAME'), ('OLDPWD', '/'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '1'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '42'), ('AMENT_PREFIX_PATH', '/home/ws/install/tri_gen_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('PWD', '/home/ws/build/tri_gen_trajectry_generator'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/ws/install/tri_gen_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/ws/install/tri_gen_msgs:/opt/ros/humble')]), 'shell': False}
+[16.144880] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[16.145035] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/lib/tri_gen_trajectry_generator/trajectory_generator_node\n'}
+[16.145225] (-) TimerEvent: {}
+[16.146872] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Set runtime path of "/home/ws/install/tri_gen_trajectry_generator/lib/tri_gen_trajectry_generator/trajectory_generator_node" to ""\n'}
+[16.146978] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/config\n'}
+[16.147066] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/config/trajectory_visualizer_config.rviz\n'}
+[16.147389] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/launch\n'}
+[16.147480] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/launch/trajectory_generator.launch.py\n'}
+[16.147605] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/ament_index/resource_index/package_run_dependencies/tri_gen_trajectry_generator\n'}
+[16.147742] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/ament_index/resource_index/parent_prefix_path/tri_gen_trajectry_generator\n'}
+[16.147881] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/environment/ament_prefix_path.sh\n'}
+[16.147991] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/environment/ament_prefix_path.dsv\n'}
+[16.148139] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/environment/path.sh\n'}
+[16.148255] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/environment/path.dsv\n'}
+[16.148345] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/local_setup.bash\n'}
+[16.148432] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/local_setup.sh\n'}
+[16.148524] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/local_setup.zsh\n'}
+[16.148611] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/local_setup.dsv\n'}
+[16.148712] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/package.dsv\n'}
+[16.148841] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/ament_index/resource_index/packages/tri_gen_trajectry_generator\n'}
+[16.148966] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/cmake/tri_gen_trajectry_generatorConfig.cmake\n'}
+[16.149047] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/cmake/tri_gen_trajectry_generatorConfig-version.cmake\n'}
+[16.149137] (tri_gen_trajectry_generator) StdoutLine: {'line': b'-- Installing: /home/ws/install/tri_gen_trajectry_generator/share/tri_gen_trajectry_generator/package.xml\n'}
+[16.150494] (tri_gen_trajectry_generator) CommandEnded: {'returncode': 0}
+[16.160666] (tri_gen_trajectry_generator) JobEnded: {'identifier': 'tri_gen_trajectry_generator', 'rc': 0}
+[16.161144] (-) EventReactorShutdown: {}

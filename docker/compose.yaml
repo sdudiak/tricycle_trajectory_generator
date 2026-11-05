@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  tricycle_trajectory_generator:
+    container_name: tricycle_trajectory_generator
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      args:
+        USERNAME: "user"  # Replace with actual username
+    privileged: true
+    network_mode: host
+    ipc: host
+    pid: host
+    environment:
+      DISPLAY: "${DISPLAY}"
+      ROS_LOCALHOST_ONLY: "1"
+      ROS_DOMAIN_ID: "42"
+    volumes:
+      - .:/home/ws:cached
+      - /tmp/.X11-unix:/tmp/.X11-unix:cached
+      - /dev/dri:/dev/dri:cached
+      - ../trajectory_request.yaml:/trajectory_request.yaml
+    stdin_open: true
+    tty: true
+    entrypoint: ["/entrypoint.sh"]

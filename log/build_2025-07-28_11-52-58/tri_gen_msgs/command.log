@@ -1,0 +1,2 @@
+Invoking command in '/home/ws/build/tri_gen_msgs': /usr/bin/cmake /home/ws/tri_gen/src/tri_gen_msgs -DCMAKE_INSTALL_PREFIX=/home/ws/install/tri_gen_msgs
+Invoked command in '/home/ws/build/tri_gen_msgs' returned '1': /usr/bin/cmake /home/ws/tri_gen/src/tri_gen_msgs -DCMAKE_INSTALL_PREFIX=/home/ws/install/tri_gen_msgs
