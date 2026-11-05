@@ -1,9 +1,0 @@
-{
-  "package_name": "tri_gen_msgs",
-  "non_idl_tuples": [
-    "/home/ws/tri_gen/src/tri_gen_msgs:msg/State.msg",
-    "/home/ws/tri_gen/src/tri_gen_msgs:msg/Control.msg",
-    "/home/ws/tri_gen/src/tri_gen_msgs:msg/Trajectory.msg",
-    "/home/ws/tri_gen/src/tri_gen_msgs:srv/GenerateTrajectory.srv"
-  ]
-}

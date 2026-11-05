@@ -1,3 +1,0 @@
-[console_scripts]
-trajectory_requester = tri_gen_trajectory_requester.trajectory_requester:main
-
